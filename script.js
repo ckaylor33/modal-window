@@ -25,3 +25,11 @@ overlay.addEventListener(`click`, closeModal);
 //we are using the functionality of adding and removing classes all the time in order to change the appearence of elements on the page
 
 //by adding and removing a class we can activate and de-activate certain styles at the same time
+
+document.addEventListener(`keydown`, event => {
+  //calls the function when keydown event happens, passes in event object as an argument when this happens
+  if (event.key === `Escape` && !modal.classList.contains(`hidden`)) {
+    //if pressed key = esc and modal doesn't contain the hidden class
+    closeModal(); //then execute the closeModal function
+  }
+});
